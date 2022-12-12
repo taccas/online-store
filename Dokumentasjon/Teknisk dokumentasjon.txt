@@ -1,0 +1,11 @@
+VM Information
+
+Windows 10 Home
+
+password: Hhs123456
+
+phpMyAdmin Information
+
+user: superadmin
+
+password: fisher1448
