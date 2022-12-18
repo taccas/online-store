@@ -12,11 +12,7 @@ $dbname = "online-store";
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
 
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-
-// Query the products table
+// Request the products table
 $sql = "SELECT * FROM products";
 $result = mysqli_query($conn, $sql);
 
