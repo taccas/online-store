@@ -4,8 +4,15 @@ Windows 10 Home
 
 password: Hhs123456
 
+XAMPP
+
+Apache
+
+MySQL
+
 phpMyAdmin Information
 
 user: superadmin
 
 password: fisher1448
+
