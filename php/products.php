@@ -23,7 +23,7 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
   // Output the product names and prices, along with a "Order" button for each product
   while($row = mysqli_fetch_assoc($result)) {
-    $product_name = $row['product_name'];
+    $product_name = $row['name'];
     $product_price = $row['price'];
     echo "$product_name - $product_price <br>";
     echo "<form action='checkout.php' method='post'>";

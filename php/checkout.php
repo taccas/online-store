@@ -7,7 +7,7 @@
   Card Number:<br>
   <input type="text" name="card_number" value=""><br>
   Expiration Date:<br>
-  <input type="text" name="expiration_date" value=""><br>
+  <input type="text" name="expiration" value=""><br>
   CVV:<br>
   <input type="text" name="cvv" value=""><br>
   Email:<br>
