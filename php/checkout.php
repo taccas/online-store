@@ -34,7 +34,7 @@
     // Output the product names as checkboxes
     while($row = mysqli_fetch_assoc($result)) {
       $product_name = $row['name'];
-      echo "<input type='checkbox' name='products[]' value='$product_name'> $product_name<br>";
+      echo "<input type='checkbox' product_name='products[]' value='$product_name'> $product_name<br>";
     }
   } else {
     echo "No products available";
