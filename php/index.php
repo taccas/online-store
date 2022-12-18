@@ -8,20 +8,20 @@ $dbname = "online-store";
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
 
-// Check MySQL connection
+// Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Choose what information to request
+// Query the products table
 $sql = "SELECT * FROM products";
 $result = mysqli_query($conn, $sql);
 
-// Check if the request was successful
+// Check if the query was successful
 if (mysqli_num_rows($result) > 0) {
     // Output the products
     while($row = mysqli_fetch_assoc($result)) {
-        echo "Name: " . $row["product_name"]. " - Description: " . $row["product_desc"]. " - Price: " . $row["price"]. "<br>";
+        echo "ID: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. "<br>";
     }
 } else {
     echo "No products found.";
@@ -32,12 +32,23 @@ mysqli_close($conn);
 
 ?>
 
-<!-- Button to trigger PHP code -->
+<!-- HTML button to trigger the PHP code -->
 <button onclick="viewAll()">View All</button>
 
 <!-- JavaScript function to trigger the PHP code -->
 <script>
 function viewAll() {
+  // Make an AJAX request to the PHP file
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      // Update the page with the product data
+      document.getElementById("products").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "view-all.php", true);
+  xhttp.send();
+}
 </script>
 
 <!-- Div to hold the product data -->
