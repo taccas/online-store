@@ -11,10 +11,6 @@
     // get 
     $products = mysqli_fatch_all($result, MYSQLI_ASSOC);
 
-<<<<<<< HEAD
-print_r($products);
-=======
     print_r($products);
->>>>>>> f838daab8a8077ddaf8160b0da0e7187338be888
 
 ?>
