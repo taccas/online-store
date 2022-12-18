@@ -2,8 +2,8 @@
 
 // Connect to the MySQL database
 $host = "localhost";
-$user = "username";
-$password = "password";
+$user = "superadmin";
+$password = "fisher1448";
 $dbname = "online-store";
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // Output the products
     while($row = mysqli_fetch_assoc($result)) {
-        echo "ID: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. "<br>";
+        echo "Name: " . $row["product_name"]. " - Description: " . $row["product_desc"]. " - Price: " . $row["price"]. "<br>";
     }
 } else {
     echo "No products found.";
