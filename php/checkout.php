@@ -50,13 +50,11 @@ if (isset($_GET['product_id'])) {
     <p>Price: $<?php echo $product['price']; ?></p>
 
     <form action="checkout.php?product_id=<?php echo $product_id; ?>" method="post">
-      <label for="first_name">First Name:</label><br>
-      <input type="text" id="first_name" name="first_name"><br>
-      <label for="last_name">Last Name:</label><br>
-      <input type="text" id="last_name" name="last_name"><br>
-      <label for="address">Address:</label><br>
-      <input type="text" id="address" name="address"><br><br>
-      <input type="submit" name="submit" value="Place Order">
-    </form>
-  <?php else: ?>
-    <p>
+  <label for="first_name">First Name:</label><br>
+  <input type="text" id="first_name" name="first_name"><br>
+  <label for="last_name">Last Name:</label><br>
+  <input type="text" id="last_name" name="last_name"><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address"><br><br>
+  <input type="submit" name="submit" value="Place Order">
+</form>
