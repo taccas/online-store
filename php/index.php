@@ -1,21 +1,28 @@
-<?php
+<html>
+<head>
+  <style>
+    .fancy-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
 
-// Connect to the MySQL database
-$host = "localhost";
-$user = "superadmin";
-$password = "fisher1448";
-$dbname = "online-store";
+<h2>Welcome to Our Online Store!</h2>
 
-$conn = mysqli_connect($host, $user, $password, $dbname);
+<form action="products.php">
+  <input type="submit" value="View All Products" class="fancy-button">
+</form>
 
-?>
-
-<!-- HTML button to trigger the PHP code -->
-<button onclick="viewAll()">View All</button>
-
-<script>
-function viewAll() {
-  // Redirect to the products page
-  href = "products.php";
-}
-</script>
+</body>
+</html>
