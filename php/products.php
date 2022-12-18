@@ -1,33 +1,42 @@
 <?php
-
-// Connect to the MySQL database
-$host = "localhost";
-$user = "superadmin";
-$password = "fisher1448";
-$dbname = "online-store";
+// Connect to the database
+$host = 'localhost';
+$user = 'superadmin';
+$password = 'fisher1448';
+$dbname = 'online-store';
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
-
-// Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+  die('Could not connect: ' . mysqli_error($conn));
 }
 
-// Query the products table
-$sql = "SELECT * FROM products";
-$result = mysqli_query($conn, $sql);
-
-// Check if the query was successful
-if (mysqli_num_rows($result) > 0) {
-    // Output the products
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "Name: " . $row["product_name"]. " - Description: " . $row["product_desc"]. " - Price: " . $row["price"]. "<br>";
-    }
-} else {
-    echo "No products found.";
+// Retrieve the list of products from the database
+$result = mysqli_query($conn, 'SELECT * FROM products');
+$products = array();
+while ($row = mysqli_fetch_array($result)) {
+  $products[] = $row;
 }
 
-// Close the connection
+// Close the connection to the database
 mysqli_close($conn);
-
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products</title>
+</head>
+<body>
+  <h1>All Products</h1>
+
+  <?php foreach ($products as $product): ?>
+    <h2><?php echo $product['name']; ?></h2>
+    <p>$<?php echo $product['price']; ?></p>
+    <p><?php echo $product['description']; ?></p>
+    <form action="checkout.php" method="get">
+      <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+      <input type="submit" value="Buy">
+    </form>
+  <?php endforeach; ?>
+</body>
+</html>
