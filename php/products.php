@@ -12,12 +12,16 @@ $dbname = "online-store";
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
 
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
 // Request the products table
 $sql = "SELECT * FROM products";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-  // Output the product names and prices, along with a "Order" button for each product
+  // Outputs product names and prices, with a "Order" button
   while($row = mysqli_fetch_assoc($result)) {
     $product_name = $row['name'];
     $product_price = $row['price'];

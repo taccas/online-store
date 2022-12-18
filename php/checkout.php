@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<h2>Order Form</h2>
+<h2>Choose your order</h2>
 
 <form action="process_order.php" method="post">
   Card Number:<br>
@@ -14,7 +14,7 @@
   <input type="text" name="email" value=""><br>
   <br>
   <?php
-  // Connect to the MySQL database
+  // Connect to the database
   $host = "localhost";
   $user = "superadmin";
   $password = "fisher1448";

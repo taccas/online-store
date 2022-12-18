@@ -1,5 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
     .fancy-button {
       background-color: #4CAF50;
@@ -17,10 +22,10 @@
   </style>
 </head>
 <body>
+  
+<h2>Welcome to my Watch store!</h2>
 
-<h2>Welcome to Our Online Store!</h2>
-
-<form action="products.php">
+<form action="products.php"> <!-- View All Products Button -->
   <input type="submit" value="View All Products" class="fancy-button">
 </form>
 
