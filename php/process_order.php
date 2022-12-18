@@ -17,13 +17,13 @@ $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $email = $_POST['email'];
 $card_number = $_POST['card_number'];
-$expiration_date = $_POST['expiration_date'];
+$expiration = $_POST['expiration'];
 $cvv = $_POST['cvv'];
 $products = $_POST['products'];
 
 // Insert data into the orders table
 $sql = "INSERT INTO orders (first_name, last_name, email, card_number, expiration, cvv)
-VALUES ('$first_name', '$last_name', '$email', '$card_number', '$expiration_date', '$cvv')";
+VALUES ('$first_name', '$last_name', '$email', '$card_number', '$expiration', '$cvv')";
 
 if (mysqli_query($conn, $sql)) {
   echo "New order created successfully<br>";
