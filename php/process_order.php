@@ -2,8 +2,8 @@
 
 // Connect to the MySQL database
 $host = "localhost";
-$user = "database_username";
-$password = "database_password";
+$user = "superadmin";
+$password = "fisher1448";
 $dbname = "online-store";
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
