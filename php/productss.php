@@ -11,6 +11,6 @@ $result = mysqli_query($conn, $sql);
 // get 
 $products = mysqli_fatch_all($result, MYSQLI_ASSOC);
 
-print_r($products)
+print_r($products);
 
 ?>
