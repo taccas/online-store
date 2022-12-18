@@ -2,6 +2,12 @@
 
     $conn = mysqli_connect("localhost", "superadmin", "fisher1448", "online-store");
 
+
+    if (!$conn) {
+        die('Error connecting to database: ' . mysqli_error($conn));
+      }
+
+
     // request for all products
     $sql = "SELECT * FROM products";
 
