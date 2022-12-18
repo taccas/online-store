@@ -30,9 +30,9 @@ mysqli_close($conn);
   <h1>All Products</h1>
 
   <?php foreach ($products as $product): ?>
-    <h2><?php echo $product['name']; ?></h2>
+    <h2><?php echo $product['product_name']; ?></h2>
     <p>$<?php echo $product['price']; ?></p>
-    <p><?php echo $product['description']; ?></p>
+    <p><?php echo $product['product_description']; ?></p>
     <form action="checkout.php" method="get">
       <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
       <input type="submit" value="Buy">
