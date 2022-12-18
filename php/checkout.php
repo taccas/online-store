@@ -1,5 +1,5 @@
 <?php
-$product_id = isset($_GET['product_id']) ? (int)$_GET['product_id'] : 0;
+$product_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 // Connect to the database and retrieve the product details
 $host = 'localhost';
