@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // Output the products
     while($row = mysqli_fetch_assoc($result)) {
-        echo "ID: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. "<br>";
+        echo "Nam4: " . $row["product_name"]. " - Description: " . $row["product_desc"]. " - Price: " . $row["price"]. "<br>";
     }
 } else {
     echo "No products found.";
